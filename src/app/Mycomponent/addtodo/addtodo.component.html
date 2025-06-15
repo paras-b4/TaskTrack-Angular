@@ -1,6 +1,6 @@
 <div class="">
     <h3>Add a Todo</h3>
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()"> 
     <div class="form-group">
         
       <label for="title" class="form-label">Todo Title</label>
@@ -11,9 +11,6 @@
       <label for="exampleInputPassword1" class="form-label">Todo description</label>
       <input type="text" [(ngModel)]="desc" class="form-control" name="desc" id="desc">
     </div>
-    
-   
     <button type="submit" class="btn btn-primary btn-sm mt-4">Add Todo</button>
   </form>
-
 </div>

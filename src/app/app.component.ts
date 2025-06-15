@@ -12,7 +12,8 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'paras1';
-todo: any;
+  todo: any;
+
 //   name:string='Paras'
 //  constructor()
 //  {
@@ -20,7 +21,8 @@ todo: any;
 //      this.name='Paras Yadav'
 //    },2000)
 
-   
- }
+
+// }
+}
 
 

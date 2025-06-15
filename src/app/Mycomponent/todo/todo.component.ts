@@ -13,9 +13,11 @@ import { AddtodoComponent } from "../addtodo/addtodo.component";
 export class TodoComponent {
 
   localItem!:string
-  todos!:Todo[]
+  todos!:Todo[ ]
+  
   constructor()
   {
+   
     this.localItem=localStorage.getItem("todos")||''
     if(this.localItem==null|| this.localItem=='')
     {
@@ -23,7 +25,6 @@ export class TodoComponent {
     }
     else{
       this.todos=JSON.parse(this.localItem)
-
     }
    
   }
@@ -38,15 +39,21 @@ export class TodoComponent {
     this.todos.push(todo)
     localStorage.setItem("todos",JSON.stringify(this.todos))
     }
-    toggletodo(todo:Todo) {
-      console.log(todo)
-      const index=this.todos.indexOf(todo)
-      this.todos[index].active=!this.todos[index].active
-      console.log(todo.active)
-      localStorage.setItem("todos",JSON.stringify(this.todos))
-     
-    }
-      
+  toggletodo(todo:Todo) {
+    console.log(todo)
+    const index=this.todos.indexOf(todo)
+    
+    // this.todos[index].active=!this.todos[index].active
+    if (this.todos[index].active) {
+  this.todos[index].active = false;
+} else {
+  this.todos[index].active = true;
+}
+
+    console.log(todo.active)
+    localStorage.setItem("todos",JSON.stringify(this.todos))
+
+  }
   
 
 }

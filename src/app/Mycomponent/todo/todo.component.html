@@ -1,10 +1,15 @@
 <app-addtodo (todoAdd)="addtodo($event)"></app-addtodo> 
 <h3 class="mt-5" >Your Todos</h3>
-<div *ngIf="this.todos.length===0 else elseblock"> No Todos to display</div>
+<div *ngIf="this.todos.length===0 else elseblock"> 
+    <h4><br>No Todos to display.<br><br> Created by 👨‍💻 Developer Paras Yadav <br> <br>Tools 👉 Angular , Bootstarp</h4> 
+</div>
 <ng-template #elseblock>
-    <div *ngFor="let todo of todos">
-        <app-todoitems [todo]="todo"(todoDelete)="deletetodo(todo)" (todoCheckBox)="toggletodo($event)"></app-todoitems>
+    
+    <div *ngFor="let todo of todos; let i=index">
+        
+        <app-todoitems [todo]="todo" [count]="i+1" (todoDelete)="deletetodo(todo)" (todoCheckBox)="toggletodo($event)"></app-todoitems>
     </div>
+    <!-- <app-todoitems [todo]="todo" this is called property binding pass the properties from parent to child  -->
 </ng-template>
 
 

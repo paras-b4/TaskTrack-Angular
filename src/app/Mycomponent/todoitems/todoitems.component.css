@@ -1,3 +1,13 @@
 .strike{
     text-decoration: line-through;
 }
+.custom-check-wrapper {
+  background-color: rgba(0, 0, 0, 0.9); /* black transparent */
+  padding: 0.5rem 2rem;
+  
+  border-radius: 0.5rem;
+  /* display: inline-flex; */
+  align-items: center;
+  width: fit-content; /* adjusts to content length */
+  color: white; /* text inside stays readable */
+}

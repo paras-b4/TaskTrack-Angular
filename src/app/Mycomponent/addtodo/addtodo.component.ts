@@ -11,6 +11,7 @@ import { Todo } from '../../Todo';
 export class AddtodoComponent {
   title!:string 
   desc!:string
+  
  @Output() todoAdd :EventEmitter<Todo> =new EventEmitter()
   constructor()
   {
@@ -19,12 +20,10 @@ export class AddtodoComponent {
 
 onSubmit() {
   const todo={
-   
-    
     title: this.title,
     desc: this.desc,
     active: true
-    
+
   }
   this.todoAdd.emit(todo)
    
